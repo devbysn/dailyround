@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: custom-error-page
+  namespace: ingress-nginx
+data:
+  rate-limit.html: |
+    <html>
+    <body>
+      <h1>Too Many Requests</h1>
+      <p>You have exceeded the allowed number of requests. Please try again later.</p>
+    </body>
+    </html>
+

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ratelimit-config
+  namespace: ingress-nginx
+data:
+  limit_req_zone: |
+    $binary_remote_addr $http_x_client_id zone=rate_limit_zone:10m rate=5r/m;
+
